@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.ArrayList; // untuk mengimport arraylist
 import java.util.List;
 
 // Class RentalMotor untuk mengatur penyewaan sepeda motor
@@ -6,7 +6,9 @@ public class RentalMontor {
     private List<Motor> motorList;
 
     public RentalMontor() {
-        motorList = new ArrayList<>();
+        motorList = new ArrayList<>(); //untuk menambahkan objek dan elemen baru
+        MotorManual motorManual3 = new MotorManual();
+        motorList.add(motorManual3);
     }
 
     public void tambahMotor(Motor motor) {
@@ -15,7 +17,7 @@ public class RentalMontor {
     }
 
     public void tampilkanMotor() {
-        if (motorList.isEmpty()) {
+        if (motorList.isEmpty()) { // ngecek lisnya kosong apa tidak
             System.out.println("Tidak ada motor yang tersedia.");
         } else {
             System.out.println("Daftar Motor:");
@@ -29,7 +31,7 @@ public class RentalMontor {
 
     public void hapusMotor(int index) {
         if (index >= 0 && index < motorList.size()) {
-            motorList.remove(index);
+            motorList.remove(index); // ini untuk menghapus index
             System.out.println("Motor berhasil dihapus.");
         } else {
             System.out.println("Indeks motor tidak valid.");

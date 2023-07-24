@@ -5,8 +5,11 @@ public class Main {
     public static void main(String[] args) {
         RentalMontor rentalMotor = new RentalMontor();
         Scanner scanner = new Scanner(System.in);
+        MotorManual motorManual = new MotorManual();
+        motorManual.setMerk("ducati");
+        System.out.println(motorManual.getMerk());
 
-        int menu;
+        int menu; // untuk memilih opsi menu melalui inputan angka
         do {
             System.out.println("Menu:");
             System.out.println("1. Tambah Motor");
@@ -16,7 +19,7 @@ public class Main {
             System.out.print("Pilih menu: ");
             menu = scanner.nextInt();
 
-            switch (menu) {
+            switch (menu) { // untuk menambahkan montor,merk,tahun produksi,dan jenis montor
                 case 1:
                     // Tambah Motor
                     System.out.println("Tambah Motor");
@@ -27,7 +30,7 @@ public class Main {
                     System.out.print("Jenis Motor (1. Manual, 2. Matic): ");
                     int jenisMotor = scanner.nextInt();
 
-                    Motor motor;
+                    Motor motor; //untuk membuat objek dari kelas Motor berdasarkan jenis motor yang diberikan.
                     if (jenisMotor == 1) {
                         System.out.print("Kapasitas Tangki: ");
                         int kapasitasTangki = scanner.nextInt();
@@ -42,10 +45,10 @@ public class Main {
                     }
 
                     rentalMotor.tambahMotor(motor);
-                    break;
+                    break; // "break" untuk menghentikan eksekusi lebih lanjut.
 
                 case 2:
-                    // Tampilkan Motor
+                    // tampilkan montor
                     rentalMotor.tampilkanMotor();
                     break;
 
@@ -66,6 +69,12 @@ public class Main {
                     break;
             }
             System.out.println();
-        } while (menu != 0);
+        } while (menu != 0); //-while" untuk mengulang eksekusi blok kode
     }
 }
+// protected keyword adalah jenis aksesibilitas yang mengatur akses ke anggota kelas (seperti variabel atau metode) dalam sebuah hierarki pewarisan (inheritance). 
+// Konsep ini terutama digunakan dalam bahasa pemrograman berorientasi objek, di mana kelas dapat mewarisi sifat dan perilaku dari kelas lain (kelas induk atau superclass).
+
+// Abstract method adalah metode dalam bahasa pemrograman yang tidak memiliki implementasi langsung di dalam kelas di mana metode tersebut dideklarasikan. 
+// Metode abstrak ditandai dengan kata kunci "abstract" di depan deklarasinya dan tidak diikuti oleh tubuh metode (kode implementasi). Sebaliknya, metode abstrak hanya 
+// memiliki tanda tangan metode yang terdiri dari nama metode, tipe kembalian (jika ada), dan daftar parameter.
